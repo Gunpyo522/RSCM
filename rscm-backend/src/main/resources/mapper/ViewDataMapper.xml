@@ -1,0 +1,12 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.rscm.mapper.ViewDataMapper">
+    <insert id="insertViewData" parameterType="hello.rscm.model.ViewDataVO">
+        INSERT INTO tbl_view_data (id, datetime, crime_type, location, offender, victim, add_information, region_code)
+        VALUES (#{id}, #{datetime}, #{crimeType}, #{location}, #{offender}, #{victim}, #{addInformation}, #{regionCode})
+    </insert>
+
+    <select id="findAllViewData" resultType="hello.rscm.model.ViewDataVO">
+        SELECT * FROM tbl_view_data
+    </select>
+    <!-- 추가적인 쿼리 정의 가능 -->
+</mapper>

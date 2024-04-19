@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.rscm.mapper.CollectedDataMapper">
+    <select id="findAll" resultType="hello.rscm.model.CollectedDataVO">
+        SELECT id, content, keyword, merge_target, collected_place AS mergeTarget FROM tbl_collected_data
+    </select>
+    <insert id="insertCollectedData" parameterType="hello.rscm.model.CollectedDataVO">
+        INSERT INTO tbl_collected_data (id, content, keyword)
+        VALUES (#{id}, #{content}, #{keyword, jdbcType=VARCHAR})
+    </insert>
+    <!-- 특정 id의 데이터를 삭제하는 쿼리 -->
+    <delete id="deleteCollectedData" parameterType="int">
+        DELETE FROM tbl_collected_data WHERE id = #{id}
+    </delete>
+</mapper>
+
+
+

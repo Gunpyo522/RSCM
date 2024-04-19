@@ -1,4 +1,4 @@
-package com.example.rscmbackend;
+package hello.rscm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
